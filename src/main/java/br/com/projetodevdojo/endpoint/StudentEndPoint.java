@@ -1,0 +1,19 @@
+package br.com.projetodevdojo.endpoint;
+
+import java.util.List;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.projetodevdojo.model.Student;
+import static java.util.Arrays.asList;
+
+@RestController
+@RequestMapping("student")
+public class StudentEndPoint {
+	@RequestMapping(method = RequestMethod.GET, path = "/list")
+	public List<Student> listAll() {
+		return asList(new Student("othan"), new Student("pietro"));
+	}
+
+}
